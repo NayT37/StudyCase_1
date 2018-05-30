@@ -1,0 +1,70 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #ECF6EC;
+}
+
+/* Elements Style */
+
+h1 {
+    color: #ECF6EC;
+    font-size: 15vw;
+    margin: 0 auto;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+}
+
+a {
+    background-color: rgba(0, 0, 0, 0.39);
+    color: #ECF6EC;
+    text-align: center;
+}
+
+/* Classes Style */
+
+.main-section {
+    background-image: url(../img/home-img.png);
+    height: 45vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+/* SubClasses Style */
+
+nav>a {
+    height: 3em;
+}
+
+/* Responsive Style */
+
+@media only screen and (max-width: 1200px) {
+    .main-section {
+        height: 65vw;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .main-section {
+        height: 70vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main-section {
+        height: 80vw;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .main-section {
+        height: 100vw;
+    }
+}
