@@ -15,15 +15,26 @@ h1 {
     margin: 0 auto;
 }
 
+h2{
+    color: #ECF6EC;
+    position: relative;
+    font-size: 20pt;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
 nav {
     width: 100%;
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.39);
 }
 
 a {
-    background-color: rgba(0, 0, 0, 0.39);
+    font-size: 12pt;
     color: #ECF6EC;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* Classes Style */
@@ -37,10 +48,16 @@ a {
     align-items: center;
 }
 
+.sub-section{
+    position: relative;
+    margin-top: -3em;
+    background-color: rgb(31, 212, 167);
+}
+
 /* SubClasses Style */
 
-nav>a {
-    height: 3em;
+a:hover{
+    color: #ECF6EC;
 }
 
 /* Responsive Style */
@@ -48,7 +65,7 @@ nav>a {
 @media only screen and (max-width: 1200px) {
     .main-section {
         height: 65vw;
-    }
+    }  
 }
 
 @media only screen and (max-width: 960px) {
@@ -67,4 +84,6 @@ nav>a {
     .main-section {
         height: 100vw;
     }
+
+
 }
