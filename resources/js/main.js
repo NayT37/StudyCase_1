@@ -1,11 +1,16 @@
+const _DOMobj = {};
+
 window.onload = function () {
-    let widthTxt = document.getElementById("screen");
-    widthTxt.innerHTML = "Screen size is : " + window.innerWidth;
+    _DOMobj.widthTxt = document.getElementById("screen");
+    _DOMobj.widthTxt.innerHTML = "Screen size is : " + window.innerWidth;
+    document.getElementById('img1').style.backgroundImage = "url('./resources/img/section_img.png')";
 }
 
 window.onresize = UpdateWidthText;
 
 function UpdateWidthText() {
-    let widthTxt = document.getElementById("screen");
-    widthTxt.innerHTML = "Screen size is : " + window.innerWidth;
+    _DOMobj.widthTxt.innerHTML = "Screen size is : " + window.innerWidth;
+}
+
+function setFirstImages() {
 }
