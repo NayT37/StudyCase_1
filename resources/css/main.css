@@ -15,6 +15,7 @@ nav {
     width: 100%;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.39);
+    z-index: 5;
 }
 
 ul {
@@ -38,7 +39,25 @@ h2 {
     margin: 0 auto;
     text-align: center;
     padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+h3 {
+    margin: 0 auto;
+    margin-top: 15rem;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
 }
 
 a {
@@ -50,15 +69,16 @@ a {
 }
 
 button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border-radius: 0.5rem;
     background-color: #ECF6EC;
-    margin-top: 1rem;
+    margin-top: 0.3rem;
     margin-bottom: 1.5rem;
-}
-
-
-button:hover{
-    background-color: #5F4BB4;
+    font-size: 12pt;
+    width: 100%;
+    border: none;
 }
 
 /* Classes Style */
@@ -77,12 +97,26 @@ button:hover{
     margin-top: -3em;
     background-color: #84A3D7;
     border-radius: 25px;
+    position: absolute;
+    z-index: 1;
 }
 
-.sub-section>div {
+.sub-title {
+    z-index: 0;
+}
+
+.sub-title-buttons {
     width: 100%;
-    /*Using flex it's awesome*/
     display: flex;
+    flex-wrap: wrap;
+}
+
+.product-description {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 /* SubClasses Style */
@@ -91,28 +125,107 @@ a:hover {
     color: #ECF6EC;
 }
 
+button:hover {
+    background-color: #5F4BB4;
+}
+
+.sub-section>div {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /*Using flex it's awesome*/
+    display: flex;
+    /*Using flex it's double awesome*/
+    flex-wrap: wrap;
+}
+
+.sub-section>div>div {
+    padding: 0;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+.sub-title>div {
+    width: 100%;
+    /*Using flex it's awesome*/
+    display: flex;
+    /*Using flex it's double awesome*/
+    flex-wrap: wrap;
+}
+
+.sub-title-buttons>div>button {
+    background-color: rgb(168, 255, 226);
+    height: 3rem;
+}
+
+.sub-title-buttons>div>button:hover {
+    background-color: #ECF6EC;
+}
+
+/*
+.product-description>div {
+    background-image: url(../img/home-img.png);
+}
+*/
+
 /* Responsive Style */
 
 @media only screen and (max-width: 1200px) {
+    /* Element Style */
+    /* Classes Style */
     .main-section {
         height: 65vw;
     }
+    /* Subclasses Style */
 }
 
 @media only screen and (max-width: 960px) {
+    /* Element Style */
+    /* Classes Style */
     .main-section {
         height: 70vw;
     }
+    /* Subclasses Style */
 }
 
 @media only screen and (max-width: 768px) {
+    /* Element Style */
+    h2 {
+        padding-bottom: 1rem;
+    }
+    button {
+        margin-bottom: 1rem;
+        font-size: 10pt;
+    }
+    /* Classes Style */
     .main-section {
         height: 80vw;
     }
+    /* Subclasses Style */
 }
 
 @media only screen and (max-width: 576px) {
+    /* Element Style */
+    h2 {
+        font-size: 22.8pt;
+        padding-bottom: 1.5rem;
+    }
+    button {
+        margin-top: 0;
+        font-size: 10pt;
+    }
+    /* Classes Style */
     .main-section {
         height: 100vw;
+    }
+    /* Subclasses Style */
+    .sub-title-buttons>div {
+        margin: 0;
+        padding: 0;
+    }
+    .sub-title-buttons>div>button {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
     }
 }
