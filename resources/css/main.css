@@ -9,6 +9,8 @@ body {
 
 /* Elements Style */
 
+/*Notice: dont use pixels. Use ems for queries and rems for spacing*/
+
 nav {
     width: 100%;
     position: fixed;
@@ -32,9 +34,11 @@ h1 {
 h2 {
     color: #ECF6EC;
     position: static;
-    font-size: 20pt;
+    font-size: 37pt;
     margin: 0 auto;
     text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 a {
@@ -43,6 +47,18 @@ a {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+button {
+    border-radius: 0.5rem;
+    background-color: #ECF6EC;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+button:hover{
+    background-color: #5F4BB4;
 }
 
 /* Classes Style */
@@ -59,8 +75,8 @@ a {
 .sub-section {
     position: static;
     margin-top: -3em;
-    background-color: rgb(31, 212, 167);
-    height: 80px;
+    background-color: #84A3D7;
+    border-radius: 25px;
 }
 
 .sub-section>div {
