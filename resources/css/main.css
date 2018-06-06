@@ -117,14 +117,37 @@ button {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    height: auto;
 }
 
 /*This section has to make the images responsive*/
+
 .product-image {
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
+    background-color: black;
+}
+
+#img1 {
+    /* 
+           background: url(../img/spriteSheet.png) no-repeat -21px -135px;
+   width: 481px;
+   height: 481px;
+       width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    */
+    background: url(../img/spriteSheet.png) no-repeat -21px -135px;
+
+    width: 481px;
+    height: 481px;
+    /*
+        background-image: url(../img/spriteSheet.png);
+         background-size: 300%;
+    background-image: url(../img/spriteSheet.png);
+    background-position: 0px -59px;
+    background-size: 300%;
+    background-repeat: no-repeat;
+    display: block;
+    */
 }
 
 /* SubClasses Style */
