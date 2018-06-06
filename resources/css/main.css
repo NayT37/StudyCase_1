@@ -119,6 +119,14 @@ button {
     width: 100%;
 }
 
+/*This section has to make the images responsive*/
+.product-image {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
 /* SubClasses Style */
 
 a:hover {
@@ -161,12 +169,6 @@ button:hover {
 .sub-title-buttons>div>button:hover {
     background-color: #ECF6EC;
 }
-
-/*
-.product-description>div {
-    background-image: url(../img/home-img.png);
-}
-*/
 
 /* Responsive Style */
 
