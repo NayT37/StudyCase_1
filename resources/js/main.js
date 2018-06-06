@@ -1,6 +1,7 @@
+//main.js
 window.onload = function () {
     document.getElementById("screen").innerHTML = "Screen size is : " + window.innerWidth;
-    setFirstImages();
+    //setFirstImages();
 }
 
 window.onresize = UpdateWidthText;
