@@ -121,6 +121,7 @@ button {
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
     height: auto;
@@ -135,18 +136,38 @@ button {
 
 #img1 {
     background-position: 5% 20%;
+    order: 1;
+}
+
+div#product-description div:nth-child(2) {
+    order: 2;
 }
 
 #img2 {
     background-position: 35% 20%;
+    order: 3;
+}
+
+div#product-description div:nth-child(4) {
+    order: 4;
+}
+
+div#product-description div:nth-child(5) {
+    order: 5;
 }
 
 #img3 {
     background-position: 5% 95%;
+    order: 6;
+}
+
+div#product-description div:nth-child(7) {
+    order: 7;
 }
 
 #img4 {
     background-position: 35% 95%;
+    order: 8;
 }
 
 /* SubClasses Style */
@@ -163,9 +184,7 @@ button:hover {
     margin: 0;
     padding: 0;
     width: 100%;
-    /*Using flex it's awesome*/
     display: flex;
-    /*Using flex it's double awesome*/
     flex-wrap: wrap;
 }
 
@@ -235,7 +254,7 @@ button:hover {
     }
     /* Subclasses Style */
     #product-description>div>p {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
     #product-description>div>p:last-child {
         font-size: 1.3rem;
@@ -250,6 +269,9 @@ button:hover {
     h3 {
         margin-top: 1.5rem;
     }
+    h4 {
+        font-size: 1.5rem;
+    }
     button {
         margin-bottom: 1rem;
         font-size: 10pt;
@@ -259,9 +281,15 @@ button:hover {
         height: 80vw;
     }
     .product-image {
-        padding-bottom: 55%;
+        padding-bottom: 33.3%;
     }
     /* Subclasses Style */
+    #product-description>div>p {
+        font-size: 1rem;
+    }
+    #product-description>div>p:last-child {
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -270,6 +298,9 @@ button:hover {
         font-size: 22.8pt;
         padding-bottom: 1.5rem;
     }
+    h4 {
+        font-size: 0.8rem;
+    }
     button {
         margin-top: 0;
         font-size: 10pt;
@@ -277,6 +308,10 @@ button:hover {
     /* Classes Style */
     .main-section {
         height: 100vw;
+    }
+    .product-image {
+        background-size: 500%;
+        padding-bottom: 33.3%;
     }
     /* Subclasses Style */
     #sub-title-buttons>div {
@@ -287,5 +322,11 @@ button:hover {
         margin: 0;
         padding: 0;
         border-radius: 0;
+    }
+    #product-description>div>p {
+        font-size: 0.65rem;
+    }
+    #product-description>div>p:last-child {
+        font-size: 0.7rem;
     }
 }
