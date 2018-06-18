@@ -134,11 +134,53 @@ button {
     background-size: 500%;
 }
 
-#quotes-section{
+#quotes-section {
     background-color: #76A5DA;
     width: 100%;
     display: flex;
-    height: 50rem;;
+    height: 10rem;
+    align-content: center;
+    align-items: center;
+}
+
+#quotes-section>div {
+    width: 20%;
+    display: flex;
+}
+
+#quotes-section :nth-child(1)>div {
+    background-size: cover;
+    background-position: center;
+    background: url(../img/spriteSheet.png) no-repeat 73.963% 38.931%;
+    width: 100%;
+    background-size: 100%;
+    padding-bottom: 25%;
+    width: 72px;
+    height: 72px;
+}
+
+#quotes-section :nth-child(2)>div {
+    background: url(../img/spriteSheet.png) no-repeat 78.475% 38.931%;
+    width: 72px;
+    height: 72px;
+}
+
+#quotes-section :nth-child(3)>div {
+    background: url(../img/spriteSheet.png) no-repeat 73.963% 46.088%;
+    width: 72px;
+    height: 72px;
+}
+
+#quotes-section :nth-child(4)>div {
+    background: url(../img/spriteSheet.png) no-repeat 78.475% 46.323%;
+    width: 72px;
+    height: 72px;
+}
+
+#quotes-section :nth-child(5)>div {
+    background: url(../img/spriteSheet.png) no-repeat 82.987% 46.323%;
+    width: 72px;
+    height: 72px;
 }
 
 /* SubClasses Style */
@@ -167,9 +209,7 @@ button:hover {
 
 .sub-title>div {
     width: 100%;
-    /*Using flex it's awesome*/
     display: flex;
-    /*Using flex it's double awesome*/
     flex-wrap: wrap;
 }
 
@@ -221,20 +261,20 @@ div#product-description div:nth-child(4) {
 
 #img3 {
     background-position: 5% 95%;
-    order: 5;
+    order: 6;
 }
 
 div#product-description div:nth-child(5) {
-    order: 6;
+    order: 5;
 }
 
 #img4 {
     background-position: 35% 95%;
-    order: 7;
+    order: 8;
 }
 
 div#product-description div:nth-child(7) {
-    order: 8;
+    order: 7;
 }
 
 /* Responsive Style */
@@ -359,6 +399,11 @@ div#product-description div:nth-child(7) {
         margin: 0;
         padding: 0;
         border-radius: 0;
+    }
+    .product-info {
+        margin: 0;
+        padding: 0;
+        padding: 1.5vw;
     }
     #product-description>div>p {
         font-size: 3.5vw;
