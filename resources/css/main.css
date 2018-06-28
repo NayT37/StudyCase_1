@@ -139,6 +139,7 @@ button {
     width: 100%;
     display: flex;
     height: auto;
+    flex-wrap: wrap;
 }
 
 /* SubClasses Style */
@@ -242,23 +243,28 @@ div#product-description div:nth-child(7) {
     height: auto;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 #quotes-section>p {
     margin: 0 auto;
     text-align: center;
     position: absolute;
+    font-size: 5rem;
 }
 
 #quotes-section>section {
     width: 100%;
+    height: auto;
     text-align: center;
-    position: absolute;
+}
+
+#quotes-section>section>p {
+    font-size: 3rem;
 }
 
 #quotes-section>div>div {
     width: 20%;
+    height: auto;
     display: flex;
 }
 
@@ -392,7 +398,10 @@ div#product-description div:nth-child(7) {
         order: 8;
     }
     #quotes-section>div {
-        width: 80%;
+        width: 70%;
+    }
+    #quotes-section>section>p {
+        font-size: 12vw;
     }
     #quotes-section>div>div>div {
         width: 80%;
@@ -445,7 +454,7 @@ div#product-description div:nth-child(7) {
         font-size: 5vw;
     }
     #quotes-section>div {
-        width: 90%;
+        width: 100%;
     }
     #quotes-section>div>div>div {
         width: 70%;
