@@ -15,8 +15,6 @@ body {
 
 /* Elements Style */
 
-/*Notice: dont use pixels. Use ems for queries and rems for spacing*/
-
 nav {
     width: 100%;
     position: fixed;
@@ -140,6 +138,106 @@ button {
     display: flex;
     height: auto;
     flex-wrap: wrap;
+    z-index: 2;
+}
+
+#service-section {
+    background: url(../img/section_img.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+}
+
+#service-section>div {
+    background-color: #00eeef;
+    margin: 0 auto;
+    width: 55rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#service-section>div>div>h6 {
+    font-size: 1.5rem;
+    color: #5F4BB4;
+    margin-top: 2rem;
+}
+
+#service-section>div>div>h5 {
+    font-size: 3rem;
+    color: #5F4BB4;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#service-section>div>div>p {
+    font-size: 0.8rem;
+    text-align: justify;
+    margin: 1rem 2rem 2rem 2rem;
+}
+
+#service-section>div>div {
+    background-color: #ECF6EC;
+    margin: -2rem 0.5rem 0 0.5rem;
+    width: 30%;
+    height: auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#service-section>div>div>article {
+    background-color: #5F4BB4;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+#service-section>div>div>article>p {
+    color: #ECF6EC;
+    font-size: 2rem;
+}
+
+#service-section>div>div>div {
+    background-color: #5F4BB4;
+    width: 100%;
+    padding-bottom: 70%;
+}
+
+#service-info {
+    background-color: rgba(0, 0, 0, 0.39);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#service-info>h5 {
+    margin: 0;
+    color: #ECF6EC;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+#service-info>p {
+    margin: 0;
+    width: 100%;
+    color: #ECF6EC;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#service-info>button {
+    margin: 0;
+    width: 5.5rem;
+    height: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 /* SubClasses Style */
@@ -237,7 +335,6 @@ div#product-description div:nth-child(7) {
 }
 
 #quotes-section>div {
-    /*     background-color: #5F4BB4; */
     margin: 0 auto;
     width: 40%;
     height: auto;
@@ -246,7 +343,7 @@ div#product-description div:nth-child(7) {
     z-index: 2;
 }
 
-#quotes-section>p {
+p.quote-quotes {
     margin: 0 auto;
     text-align: center;
     position: absolute;
@@ -259,10 +356,6 @@ div#product-description div:nth-child(7) {
     text-align: center;
 }
 
-#quotes-section>section>p {
-    font-size: 3rem;
-}
-
 #quotes-section>div>div {
     width: 20%;
     height: auto;
@@ -271,10 +364,9 @@ div#product-description div:nth-child(7) {
 
 #quotes-section>div>div>div {
     margin: 0 auto;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
     width: 75%;
     padding-bottom: 75%;
+    margin-top: 8rem;
 }
 
 #quotes-section>div :nth-child(1)>div {
@@ -308,6 +400,24 @@ div#product-description div:nth-child(7) {
 
 #quotes-section :nth-child(3) {
     right: 5%;
+}
+
+p#quote-name {
+    margin-top: -1%;
+    font-size: 2.5rem;
+    color: #00eeef;
+}
+
+p#quote-charge {
+    margin-top: -1%;
+    font-size: 1.5rem;
+    color: #ECF6EC;
+}
+
+p#quote-text {
+    font-size: 3rem;
+    margin-bottom: 7rem;
+    color: #ECF6EC;
 }
 
 /* Responsive Style */
@@ -352,6 +462,9 @@ div#product-description div:nth-child(7) {
     #quotes-section>div>div>div {
         width: 60%;
         padding-bottom: 60%;
+    }
+    #service-section>div {
+        width: 95%;
     }
 }
 
@@ -411,13 +524,57 @@ div#product-description div:nth-child(7) {
     #quotes-section>div {
         width: 70%;
     }
-    /*It needs a selector that replaces the css for child selector in section*/
-    #quotes-section>section>p {
-        font-size: 8vw;
-    }
     #quotes-section>div>div>div {
         width: 80%;
         padding-bottom: 80%;
+    }
+    #service-section>div {
+        /*         background-color: #00eeef;
+        margin: 0 auto;
+        width: 55rem;
+        height: auto;
+        display: flex;
+        justify-content: center; */
+        flex-direction: column;
+    }
+    #service-section>div>div {
+        margin: 0 0 0.5rem 0;
+        width: 100%;
+        height: auto;
+        z-index: 3;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+    #service-section>div>div>div {
+        background-color: #5F4BB4;
+        width: 100%;
+        padding-bottom: 10%;
+    }
+    #service-section>div>div>h6 {
+        font-size: 1.5rem;
+        color: #5F4BB4;
+        margin-top: 2rem;
+    }
+    #service-section>div>div>h5 {
+        font-size: 3rem;
+        color: #5F4BB4;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    #service-section>div>div>p {
+        font-size: 0.8rem;
+        text-align: justify;
+    }
+    #service-section>div>div>article {
+        background-color: #5F4BB4;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    #service-section>div>div>article>p {
+        color: #ECF6EC;
+        font-size: 2rem;
     }
 }
 
@@ -468,16 +625,22 @@ div#product-description div:nth-child(7) {
     #quotes-section>div {
         width: 100%;
     }
-    #quotes-section :nth-child(2) {
-        left: 5%;
-        font-size: 10vw;
-    }
-    #quotes-section :nth-child(3) {
-        right: 5%;
+    p.quote-quotes {
         font-size: 10vw;
     }
     #quotes-section>div>div>div {
         width: 70%;
         padding-bottom: 70%;
+        margin-top: 16vw;
+    }
+    p#quote-name {
+        font-size: 7vw;
+    }
+    p#quote-charge {
+        font-size: 5vw;
+    }
+    p#quote-text {
+        font-size: 7vw;
+        margin-bottom: 12vw;
     }
 }

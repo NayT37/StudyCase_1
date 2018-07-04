@@ -3,6 +3,9 @@ window.onload = function () {
     document.getElementById("screen").innerHTML = "Screen size is : " + window.innerWidth;
     document.getElementById("screen").style.color = "red";
     document.getElementById("screen").style.zIndex = "200";
+    //Hide some elements
+    document.getElementById("quote-name").style.display = "none";
+    document.getElementById("quote-charge").style.display = "none";
 }
 
 window.onresize = UpdateWidthText;
@@ -12,24 +15,41 @@ function UpdateWidthText() {
 }
 
 function UpdateQuoteText(personClicked) {
+    let quoteText = document.getElementById("quote-text");
+    let quoteName = document.getElementById("quote-name");
+    let quoteCharge = document.getElementById("quote-charge");
+    quoteName.style.display = "block";
+    quoteCharge.style.display = "block";
     switch (personClicked) {
         case "guy1":
-            document.getElementById("quote-text").innerHTML = "Hi I'm Jhon";
+            quoteText.innerHTML = "Hi I'm Jhon";
+            quoteName.innerHTML = "Jhon";
+            quoteCharge.innerHTML = "Boss";
             break;
         case "guy2":
-            document.getElementById("quote-text").innerHTML = "Hi I'm Rebecca";
+            quoteText.innerHTML = "Hi I'm Rebecca";
+            quoteName.innerHTML = "Rebecca";
+            quoteCharge.innerHTML = "Developer";
             break;
         case "guy3":
-            document.getElementById("quote-text").innerHTML = "Hi I'm Kathe";
+            quoteText.innerHTML = "Hi I'm Kathe";
+            quoteName.innerHTML = "Kathe";
+            quoteCharge.innerHTML = "Designer";
             break;
         case "guy4":
-            document.getElementById("quote-text").innerHTML = "Hi I'm Paul";
+            quoteText.innerHTML = "Hi I'm Paul";
+            quoteName.innerHTML = "Paul";
+            quoteCharge.innerHTML = "Designer";
             break;
         case "guy5":
-            document.getElementById("quote-text").innerHTML = "Hi I'm Robert";
+            quoteText.innerHTML = "Hi I'm Robert";
+            quoteName.innerHTML = "Robert";
+            quoteCharge.innerHTML = "Developer";
             break;
         default:
-            document.getElementById("quote-text").innerHTML = "No quote";
+            quoteText.innerHTML = "No quote";
+            quoteName.innerHTML = "No name";
+            quoteCharge.innerHTML = "";
     }
     ShowQuoteFeedback(personClicked);
 }
@@ -39,7 +59,6 @@ function ShowQuoteFeedback(guyNumber) {
     let padding = 75;
     let elementToGrow = document.getElementById(guyNumber);
     let growthInterval;
-    let shrinkInterval;
     let temp;
 
     for (let i = 0; i < 5; i++) {
@@ -66,14 +85,4 @@ function ShowQuoteFeedback(guyNumber) {
             elementToGrow.style.paddingBottom = padding + '%';
         }
     }
-    /*     function animateShrink() {
-            if (width == 75) {
-                clearInterval(shrinkInterval);
-            } else {
-                width--;
-                padding--;
-                elementToAnimate.style.width = width + '%';
-                elementToAnimate.style.paddingBottom = padding + '%';
-            }
-        } */
 }
