@@ -1,4 +1,7 @@
 //main.js
+
+//#region Window Methods
+//When the window is loaded
 window.onload = function () {
     document.getElementById("screen").innerHTML = "Screen size is : " + window.innerWidth;
     document.getElementById("screen").style.color = "red";
@@ -8,12 +11,19 @@ window.onload = function () {
     document.getElementById("quote-charge").style.display = "none";
 }
 
-window.onresize = UpdateWidthText;
+//When the window is resized
+window.onresize = function () {
+    UpdateWidthText();
+}
+//#endregion
 
+//#region Created methods
+//Update text that shows the size of the screen
 function UpdateWidthText() {
     document.getElementById("screen").innerHTML = "Screen size is : " + window.innerWidth;
 }
 
+//Show some elements and change the Quote from each person
 function UpdateQuoteText(personClicked) {
     let quoteText = document.getElementById("quote-text");
     let quoteName = document.getElementById("quote-name");
@@ -54,6 +64,7 @@ function UpdateQuoteText(personClicked) {
     ShowQuoteFeedback(personClicked);
 }
 
+//Scale the image from the quote section
 function ShowQuoteFeedback(guyNumber) {
     let width = 75;
     let padding = 75;
@@ -74,6 +85,7 @@ function ShowQuoteFeedback(guyNumber) {
         }
     }
 
+    //A function inside a function to create the animation
     //Use the set interval / clear interval to animate the width and padding bottom properties
     function animateGrowth() {
         if (width == 85) {
@@ -86,3 +98,30 @@ function ShowQuoteFeedback(guyNumber) {
         }
     }
 }
+
+const productObj = [
+    one = false,
+    two = false,
+    three = false
+];
+function ShowServiceText(productNumber) {
+    if (window.innerWidth <= 576) {
+        switch (productNumber) {
+            case 1:
+                productObj.one = true;
+                console.log("first on");
+                break;
+            case 2:
+                productObj.two = true;
+                console.log("second on");
+                break;
+            case 3:
+                productObj.three = true;
+                console.log("third on");
+                break;
+        }
+    }
+    function ShowText() { }
+    function HideText() { }
+}
+//#endregion
