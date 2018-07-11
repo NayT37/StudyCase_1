@@ -99,29 +99,68 @@ function ShowQuoteFeedback(guyNumber) {
     }
 }
 
-const productObj = [
-    one = false,
-    two = false,
-    three = false
-];
+const productObj = {
+    one: false,
+    two: false,
+    three: false
+};
+
 function ShowServiceText(productNumber) {
+
+    let productOneTxt = document.getElementById("product-one-txt");
+    let productTwoTxt = document.getElementById("product-two-txt");
+    let productThreeTxt = document.getElementById("product-three-txt");
+    let intervalOne, intervalTwo, intervalThree;
+
     if (window.innerWidth <= 576) {
+
+        if (productObj.one == true) {
+            //intervalOne = setInterval(HideText, 5);
+            productObj.one = false;
+        } else if (productObj.two == true) {
+            //intervalTwo = setInterval(HideText, 5);
+            productObj.two = false;
+        } else if (productObj.three == true) {
+            //intervalThree = setInterval(HideText, 5);
+            productObj.three = false;
+        }
+
         switch (productNumber) {
             case 1:
                 productObj.one = true;
                 console.log("first on");
+                productOneTxt.style.visibility = "visible";
                 break;
             case 2:
                 productObj.two = true;
                 console.log("second on");
+                productTwoTxt.style.visibility = "visible";
                 break;
             case 3:
                 productObj.three = true;
                 console.log("third on");
+                productThreeTxt.style.visibility = "visible";
                 break;
         }
     }
-    function ShowText() { }
-    function HideText() { }
+    function ShowText() {
+        if (productObj.one == true) {
+
+        } else if (productObj.two == true) {
+
+        } else if (productObj.three == true) {
+
+        }
+    }
+    function HideText() {
+        if (productObj.one == true) {
+            console.log("Hide first");
+            clearInterval()
+        } else if (productObj.two == true) {
+            console.log("Hide two");
+        } else if (productObj.three == true) {
+            console.log("Hide three");
+        }
+    }
 }
 //#endregion

@@ -150,7 +150,6 @@ button {
 }
 
 #service-section>div {
-    background-color: #00eeef;
     margin: 0 auto;
     width: 55rem;
     height: auto;
@@ -721,13 +720,17 @@ p#quote-text {
     }
     #service-section>div>div>p {
         /*         display: none; */
-        background-color: #ECF6EC;
-        visibility: hidden;
+        /* background-color: #ECF6EC;*/
+        /*         background-color: #00eeef; */
         padding: 2.5vw;
-        font-size: 3.5vw;
+        font-size: 3.7vw;
         width: 95%;
-        height: auto;
-        position: absolute;
+        height: 27vw;
+        /* height: 45vw; */
+        position: relative;
+        z-index: -1;
+        margin-top: -27vw;
+        color: rgba(0, 0, 0, 1);
     }
     #service-info>h5 {
         margin-top: 0.5rem;
