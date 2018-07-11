@@ -719,9 +719,6 @@ p#quote-text {
         font-size: 5vw;
     }
     #service-section>div>div>p {
-        /*         display: none; */
-        /* background-color: #ECF6EC;*/
-        /*         background-color: #00eeef; */
         padding: 2.5vw;
         font-size: 3.7vw;
         width: 95%;
@@ -730,7 +727,7 @@ p#quote-text {
         position: relative;
         z-index: -1;
         margin-top: -27vw;
-        color: rgba(0, 0, 0, 1);
+        color: rgba(0, 0, 0, 0);
     }
     #service-info>h5 {
         margin-top: 0.5rem;
