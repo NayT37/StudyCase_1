@@ -102,65 +102,206 @@ function ShowQuoteFeedback(guyNumber) {
 const productObj = {
     one: false,
     two: false,
-    three: false
+    three: false,
+    colorOne: 0,
+    colorTwo: 0,
+    colorThree: 0,
+    posOne: 27,
+    posTwo: 27,
+    posThree: 27,
+    marginOne: -27,
+    marginTwo: -27,
+    marginThree: -27
 };
 
 function ShowServiceText(productNumber) {
-
+    //Search for elements
     let productOneTxt = document.getElementById("product-one-txt");
     let productTwoTxt = document.getElementById("product-two-txt");
     let productThreeTxt = document.getElementById("product-three-txt");
-    let intervalOne, intervalTwo, intervalThree;
+    //Show intervals
+    let showIntervalOne, showIntervalTwo, showIntervalThree;
+    let marginIntervalOne, marginIntervalTwo, marginIntervalThree;
+    //Hide intervals
+    let hideMarginOne, hideMarginTwo, hideMarginThree;
+    let hideColorOne, hideColorTwo, hideColorThree;
+    let hideTextOne, hideTextTwo, hideTextThree;
 
+    //Hide Logic
     if (window.innerWidth <= 576) {
-
-        if (productObj.one == true) {
-            //intervalOne = setInterval(HideText, 5);
-            productObj.one = false;
-        } else if (productObj.two == true) {
-            //intervalTwo = setInterval(HideText, 5);
-            productObj.two = false;
-        } else if (productObj.three == true) {
-            //intervalThree = setInterval(HideText, 5);
-            productObj.three = false;
-        }
-
+        console.log("Product number is " + productNumber);
+        //Show Logic
         switch (productNumber) {
             case 1:
-                productObj.one = true;
-                console.log("first on");
-                productOneTxt.style.visibility = "visible";
+                productObj.one = !productObj.one;
+                productObj.two = false;
+                productObj.three = false;
+
+                if (productObj.one) {
+                    marginIntervalOne = setInterval(AnimateMargin, 10);
+                    showIntervalOne = setInterval(ShowText, 25);
+                } else {
+                    //Animation's interval
+                    hideMarginOne = setInterval(HideMargin, 10);
+                }
+                /*                 if (productObj.two) {
+                                    //Animation's interval
+                                    hideMarginTwo = setInterval(HideMargin, 10);
+                                }
+                                if (productObj.three) {
+                                    //Animation's interval
+                                    hideMarginThree = setInterval(HideMargin, 10);
+                                } */
+                hideMarginTwo = setInterval(HideMargin, 10);
+                hideMarginThree = setInterval(HideMargin, 10);
                 break;
             case 2:
-                productObj.two = true;
-                console.log("second on");
-                productTwoTxt.style.visibility = "visible";
+                productObj.two = !productObj.two;
+                productObj.one = false;
+                productObj.three = false;
+                if (productObj.two) {
+                    marginIntervalTwo = setInterval(AnimateMargin, 10);
+                    showIntervalTwo = setInterval(ShowText, 25);
+                } else {
+                    //Animation's interval
+                    hideMarginTwo = setInterval(HideMargin, 10);
+                }
+
+                hideMarginOne = setInterval(HideMargin, 10);
+                hideMarginThree = setInterval(HideMargin, 10);
                 break;
             case 3:
-                productObj.three = true;
-                console.log("third on");
-                productThreeTxt.style.visibility = "visible";
+                productObj.three = !productObj.three;
+                productObj.one = false;
+                productObj.two = false;
+                if (productObj.three) {
+                    marginIntervalThree = setInterval(AnimateMargin, 10);
+                    showIntervalThree = setInterval(ShowText, 25);
+                } else {
+                    //Animation's interval
+                    hideMarginThree = setInterval(HideMargin, 10);
+                }
+
+                hideMarginTwo = setInterval(HideMargin, 10);
+                hideMarginOne = setInterval(HideMargin, 10);
                 break;
         }
     }
+
+    //Show functions
     function ShowText() {
         if (productObj.one == true) {
-
+            if (productObj.posOne < 37 && productObj.colorOne < 1) {
+                productObj.colorOne += 0.1;
+                productObj.posOne += 1;
+                productOneTxt.style.color = "rgba(0, 0, 0," + productObj.colorOne + " )";
+                productOneTxt.style.height = productObj.posOne + 'vw';
+            } else {
+                clearInterval(showIntervalOne);
+            }
         } else if (productObj.two == true) {
-
+            if (productObj.posTwo < 37 && productObj.colorTwo < 1) {
+                productObj.colorTwo += 0.1;
+                productObj.posTwo += 1;
+                productTwoTxt.style.color = "rgba(0, 0, 0," + productObj.colorTwo + " )";
+                productTwoTxt.style.height = productObj.posTwo + 'vw';
+            } else {
+                clearInterval(showIntervalTwo);
+            }
         } else if (productObj.three == true) {
-
+            if (productObj.posThree < 37 && productObj.colorThree < 1) {
+                productObj.colorThree += 0.1;
+                productObj.posThree += 1;
+                productThreeTxt.style.color = "rgba(0, 0, 0," + productObj.colorThree + " )";
+                productThreeTxt.style.height = productObj.posThree + 'vw';
+            } else {
+                clearInterval(showIntervalThree);
+            }
         }
     }
+
+    function AnimateMargin() {
+        if (productObj.one == true) {
+            if (productObj.marginOne < -0.1) {
+                productObj.marginOne += 1;
+                productOneTxt.style.marginTop = productObj.marginOne + 'vw';
+            } else {
+                clearInterval(marginIntervalOne);
+            }
+        } else if (productObj.two == true) {
+            if (productObj.marginTwo < -0.1) {
+                productObj.marginTwo += 1;
+                productTwoTxt.style.marginTop = productObj.marginTwo + 'vw';
+            } else {
+                clearInterval(marginIntervalTwo);
+            }
+        } else if (productObj.three == true) {
+            if (productObj.marginThree < -0.1) {
+                productObj.marginThree += 1;
+                productThreeTxt.style.marginTop = productObj.marginThree + 'vw';
+            } else {
+                clearInterval(marginIntervalThree);
+            }
+        }
+    }
+
+    //Hide functions
+    function HideMargin() {
+        if (productObj.one == false) {
+            if (productObj.marginOne >= -27) {
+                productObj.marginOne -= 1;
+                productOneTxt.style.marginTop = productObj.marginOne + 'vw';
+            } else {
+                clearInterval(hideMarginOne);
+            }
+        }
+
+        if (productObj.two == false) {
+            if (productObj.marginTwo >= -27) {
+                productObj.marginTwo -= 1;
+                productTwoTxt.style.marginTop = productObj.marginTwo + 'vw';
+                console.log(productObj.marginTwo);
+            } else {
+                clearInterval(hideMarginTwo);
+            }
+        }
+
+        if (productObj.three == false) {
+            if (productObj.marginThree >= -27) {
+                productObj.marginThree -= 1;
+                productThreeTxt.style.marginTop = productObj.marginThree + 'vw';
+            } else {
+                clearInterval(hideMarginThree);
+            }
+        }
+    }
+
+    function HideColor() {
+        if (productObj.one == true) {
+            console.log(productObj.colorOne);
+            clearInterval();
+        } else if (productObj.two == true) {
+            console.log(productObj.colorTwo);
+            clearInterval();
+        } else if (productObj.three == true) {
+            console.log(productObj.colorThree);
+            clearInterval();
+        }
+    }
+
     function HideText() {
         if (productObj.one == true) {
-            console.log("Hide first");
-            clearInterval()
+            console.log(productObj.posOne);
+            clearInterval();
         } else if (productObj.two == true) {
-            console.log("Hide two");
+            console.log(productObj.posTwo);
+            clearInterval();
         } else if (productObj.three == true) {
-            console.log("Hide three");
+            console.log(productObj.posThree);
+            clearInterval();
         }
     }
+
+    console.log(productObj.two);
 }
 //#endregion
