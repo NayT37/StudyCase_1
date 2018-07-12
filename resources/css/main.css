@@ -222,9 +222,26 @@ button {
 }
 
 #service-section>div>div>div.service-img {
-    background-color: #5F4BB4;
     width: 100%;
-    padding-bottom: 70%;
+    padding-bottom: 100%;
+}
+
+#service-section>div>div:nth-child(1)>div.service-img {
+    background: url(../img/spriteSheet.png) no-repeat 62.277% 98.595%;
+    /* It needs the background size proterty to be responsive */
+    background-size: 755%;
+}
+
+#service-section>div>div:nth-child(2)>div.service-img {
+    background: url(../img/spriteSheet.png) no-repeat 86.831% 15.808%;
+    /* It needs the background size proterty to be responsive */
+    background-size: 755%;
+}
+
+#service-section>div>div:nth-child(3)>div.service-img {
+    background: url(../img/spriteSheet.png) no-repeat 62.254% 15.808%;
+    /* It needs the background size proterty to be responsive */
+    background-size: 755%;
 }
 
 #service-info {
@@ -361,7 +378,7 @@ div#product-description div:nth-child(7) {
 
 #quotes-section>div {
     margin: 0 auto;
-    width: 40%;
+    width: 35rem;
     height: auto;
     display: flex;
     align-items: center;
@@ -485,8 +502,8 @@ p#quote-text {
         width: 60%;
     }
     #quotes-section>div>div>div {
-        width: 60%;
-        padding-bottom: 60%;
+        width: 75%;
+        padding-bottom: 75%;
     }
     #service-section>div {
         margin: 0 auto;
@@ -706,6 +723,21 @@ p#quote-text {
         margin: 0;
         flex: 1 1 50%;
         padding-bottom: 30%;
+    }
+    #service-section>div>div:nth-child(1)>div.service-img {
+        background: url(../img/spriteSheet.png) no-repeat 62.277% 98.595%;
+        /* It needs the background size proterty to be responsive */
+        background-size: 550%;
+    }
+    #service-section>div>div:nth-child(2)>div.service-img {
+        background: url(../img/spriteSheet.png) no-repeat 86.831% 15.808%;
+        /* It needs the background size proterty to be responsive */
+        background-size: 550%;
+    }
+    #service-section>div>div:nth-child(3)>div.service-img {
+        background: url(../img/spriteSheet.png) no-repeat 62.254% 15.808%;
+        /* It needs the background size proterty to be responsive */
+        background-size: 550%;
     }
     #service-section>div>div>div>h6 {
         margin: 0;

@@ -14,6 +14,9 @@ window.onload = function () {
 //When the window is resized
 window.onresize = function () {
     UpdateWidthText();
+    //This method includes a reset system called this way
+    //So when window resizes styles are reseted
+    ShowServiceText(0);
 }
 //#endregion
 
@@ -120,132 +123,175 @@ function ShowServiceText(productNumber) {
     let productTwoTxt = document.getElementById("product-two-txt");
     let productThreeTxt = document.getElementById("product-three-txt");
     //Show intervals
-    let showIntervalOne, showIntervalTwo, showIntervalThree;
-    let marginIntervalOne, marginIntervalTwo, marginIntervalThree;
+    let showTextOne, showTextTwo, showTextThree;
+    let showMarginOne, showMarginTwo, showMarginThree;
+    let showColorOne, showColorTwo, showColorThree;
     //Hide intervals
     let hideMarginOne, hideMarginTwo, hideMarginThree;
     let hideColorOne, hideColorTwo, hideColorThree;
     let hideTextOne, hideTextTwo, hideTextThree;
 
-    //Hide Logic
     if (window.innerWidth <= 576) {
-        console.log("Product number is " + productNumber);
-        //Show Logic
+        //Style is not reseted (when window is resized: reset!)
+        productObj.isStyleReseted = false;
+        //Show/Hide Logic
         switch (productNumber) {
             case 1:
                 productObj.one = !productObj.one;
                 productObj.two = false;
                 productObj.three = false;
-
                 if (productObj.one) {
-                    marginIntervalOne = setInterval(AnimateMargin, 10);
-                    showIntervalOne = setInterval(ShowText, 25);
+                    ShowElementOne();
                 } else {
-                    //Animation's interval
-                    hideMarginOne = setInterval(HideMargin, 10);
+                    HideElementOne();
                 }
-                /*                 if (productObj.two) {
-                                    //Animation's interval
-                                    hideMarginTwo = setInterval(HideMargin, 10);
-                                }
-                                if (productObj.three) {
-                                    //Animation's interval
-                                    hideMarginThree = setInterval(HideMargin, 10);
-                                } */
-                hideMarginTwo = setInterval(HideMargin, 10);
-                hideMarginThree = setInterval(HideMargin, 10);
+                //Hide other elements
+                HideElementTwo();
+                HideElementThree();
                 break;
             case 2:
                 productObj.two = !productObj.two;
                 productObj.one = false;
                 productObj.three = false;
                 if (productObj.two) {
-                    marginIntervalTwo = setInterval(AnimateMargin, 10);
-                    showIntervalTwo = setInterval(ShowText, 25);
+                    ShowElementTwo();
                 } else {
-                    //Animation's interval
-                    hideMarginTwo = setInterval(HideMargin, 10);
+                    HideElementTwo();
                 }
-
-                hideMarginOne = setInterval(HideMargin, 10);
-                hideMarginThree = setInterval(HideMargin, 10);
+                //Hide other elements
+                HideElementOne();
+                HideElementThree();
                 break;
             case 3:
                 productObj.three = !productObj.three;
                 productObj.one = false;
                 productObj.two = false;
                 if (productObj.three) {
-                    marginIntervalThree = setInterval(AnimateMargin, 10);
-                    showIntervalThree = setInterval(ShowText, 25);
+                    ShowElementThree();
                 } else {
-                    //Animation's interval
-                    hideMarginThree = setInterval(HideMargin, 10);
+                    HideElementThree();
                 }
-
-                hideMarginTwo = setInterval(HideMargin, 10);
-                hideMarginOne = setInterval(HideMargin, 10);
+                //Hide other elements
+                HideElementOne();
+                HideElementTwo();
+                break;
+            default:
+                ResetStyle();
                 break;
         }
+    } else {
+        ResetStyle();
     }
 
     //Show functions
+    function ShowElementOne() {
+        showMarginOne = setInterval(ShowMargin, 10);
+        showTextOne = setInterval(ShowText, 25);
+        showColorOne = setInterval(ShowColor, 30);
+    }
+    function ShowElementTwo() {
+        showMarginTwo = setInterval(ShowMargin, 10);
+        showTextTwo = setInterval(ShowText, 25);
+        showColorTwo = setInterval(ShowColor, 30);
+    }
+    function ShowElementThree() {
+        showMarginThree = setInterval(ShowMargin, 10);
+        showTextThree = setInterval(ShowText, 25);
+        showColorThree = setInterval(ShowColor, 30);
+    }
+
     function ShowText() {
         if (productObj.one == true) {
-            if (productObj.posOne < 37 && productObj.colorOne < 1) {
-                productObj.colorOne += 0.1;
+            if (productObj.posOne < 37) {
                 productObj.posOne += 1;
-                productOneTxt.style.color = "rgba(0, 0, 0," + productObj.colorOne + " )";
                 productOneTxt.style.height = productObj.posOne + 'vw';
             } else {
-                clearInterval(showIntervalOne);
+                clearInterval(showTextOne);
             }
         } else if (productObj.two == true) {
-            if (productObj.posTwo < 37 && productObj.colorTwo < 1) {
-                productObj.colorTwo += 0.1;
+            if (productObj.posTwo < 37) {
                 productObj.posTwo += 1;
-                productTwoTxt.style.color = "rgba(0, 0, 0," + productObj.colorTwo + " )";
                 productTwoTxt.style.height = productObj.posTwo + 'vw';
             } else {
-                clearInterval(showIntervalTwo);
+                clearInterval(showTextTwo);
             }
         } else if (productObj.three == true) {
-            if (productObj.posThree < 37 && productObj.colorThree < 1) {
-                productObj.colorThree += 0.1;
+            if (productObj.posThree < 37) {
                 productObj.posThree += 1;
-                productThreeTxt.style.color = "rgba(0, 0, 0," + productObj.colorThree + " )";
                 productThreeTxt.style.height = productObj.posThree + 'vw';
             } else {
-                clearInterval(showIntervalThree);
+                clearInterval(showTextThree);
             }
         }
     }
 
-    function AnimateMargin() {
+    function ShowColor() {
+        if (productObj.one == true) {
+            if (productObj.colorOne < 1) {
+                productObj.colorOne += 0.1;
+                productOneTxt.style.color = "rgba(0, 0, 0," + productObj.colorOne + " )";
+            } else {
+                clearInterval(showColorOne);
+            }
+        } else if (productObj.two == true) {
+            if (productObj.colorTwo < 1) {
+                productObj.colorTwo += 0.1;
+                productTwoTxt.style.color = "rgba(0, 0, 0," + productObj.colorTwo + " )";
+            } else {
+                clearInterval(showColorTwo);
+            }
+        } else if (productObj.three == true) {
+            if (productObj.colorThree < 1) {
+                productObj.colorThree += 0.1;
+                productThreeTxt.style.color = "rgba(0, 0, 0," + productObj.colorThree + " )";
+            } else {
+                clearInterval(showColorThree);
+            }
+        }
+    }
+
+    function ShowMargin() {
         if (productObj.one == true) {
             if (productObj.marginOne < -0.1) {
                 productObj.marginOne += 1;
                 productOneTxt.style.marginTop = productObj.marginOne + 'vw';
             } else {
-                clearInterval(marginIntervalOne);
+                clearInterval(showMarginOne);
             }
         } else if (productObj.two == true) {
             if (productObj.marginTwo < -0.1) {
                 productObj.marginTwo += 1;
                 productTwoTxt.style.marginTop = productObj.marginTwo + 'vw';
             } else {
-                clearInterval(marginIntervalTwo);
+                clearInterval(showMarginTwo);
             }
         } else if (productObj.three == true) {
             if (productObj.marginThree < -0.1) {
                 productObj.marginThree += 1;
                 productThreeTxt.style.marginTop = productObj.marginThree + 'vw';
             } else {
-                clearInterval(marginIntervalThree);
+                clearInterval(showMarginThree);
             }
         }
     }
 
     //Hide functions
+    function HideElementOne() {
+        hideMarginOne = setInterval(HideMargin, 10);
+        hideColorOne = setInterval(HideColor, 15);
+        hideTextOne = setInterval(HideText, 10);
+    }
+    function HideElementTwo() {
+        hideMarginTwo = setInterval(HideMargin, 10);
+        hideColorTwo = setInterval(HideColor, 15);
+        hideTextTwo = setInterval(HideText, 10);
+    }
+    function HideElementThree() {
+        hideMarginThree = setInterval(HideMargin, 10);
+        hideColorThree = setInterval(HideColor, 15);
+        hideTextTwo = setInterval(HideText, 10);
+    }
+
     function HideMargin() {
         if (productObj.one == false) {
             if (productObj.marginOne >= -27) {
@@ -260,7 +306,6 @@ function ShowServiceText(productNumber) {
             if (productObj.marginTwo >= -27) {
                 productObj.marginTwo -= 1;
                 productTwoTxt.style.marginTop = productObj.marginTwo + 'vw';
-                console.log(productObj.marginTwo);
             } else {
                 clearInterval(hideMarginTwo);
             }
@@ -277,31 +322,84 @@ function ShowServiceText(productNumber) {
     }
 
     function HideColor() {
-        if (productObj.one == true) {
-            console.log(productObj.colorOne);
-            clearInterval();
-        } else if (productObj.two == true) {
-            console.log(productObj.colorTwo);
-            clearInterval();
-        } else if (productObj.three == true) {
-            console.log(productObj.colorThree);
-            clearInterval();
+        if (productObj.one == false) {
+            if (productObj.colorOne > 0) {
+                productObj.colorOne -= 0.1;
+                productOneTxt.style.color = "rgba(0, 0, 0," + productObj.colorOne + " )";
+            } else {
+                clearInterval(hideColorOne);
+            }
+        }
+        if (productObj.two == false) {
+            if (productObj.colorTwo > 0) {
+                productObj.colorTwo -= 0.1;
+                productTwoTxt.style.color = "rgba(0, 0, 0," + productObj.colorTwo + " )";
+            } else {
+                clearInterval(hideColorTwo);
+            }
+        }
+        if (productObj.three == false) {
+            if (productObj.colorThree > 0) {
+                productObj.colorThree -= 0.1;
+                productThreeTxt.style.color = "rgba(0, 0, 0," + productObj.colorThree + " )";
+            } else {
+                clearInterval(hideColorThree);
+            }
         }
     }
 
     function HideText() {
-        if (productObj.one == true) {
-            console.log(productObj.posOne);
-            clearInterval();
-        } else if (productObj.two == true) {
-            console.log(productObj.posTwo);
-            clearInterval();
-        } else if (productObj.three == true) {
-            console.log(productObj.posThree);
-            clearInterval();
+        if (productObj.one == false) {
+            if (productObj.posOne > 27) {
+                productObj.posOne -= 1;
+                productOneTxt.style.height = productObj.posOne + 'vw';
+            } else {
+                clearInterval(hideTextOne);
+            }
+        }
+        if (productObj.two == false) {
+            if (productObj.posTwo > 27) {
+                productObj.posTwo -= 1;
+                productTwoTxt.style.height = productObj.posTwo + 'vw';
+            } else {
+                clearInterval(hideTextTwo);
+            }
+        }
+        if (productObj.three == false) {
+            if (productObj.posThree > 27) {
+                productObj.posThree -= 1;
+                productThreeTxt.style.height = productObj.posThree + 'vw';
+            } else {
+                clearInterval(hideTextThree);
+            }
         }
     }
 
-    console.log(productObj.two);
+    function ResetStyle() {
+        productObj.one = false;
+        productObj.two = false;
+        productObj.three = false;
+        productObj.colorOne = 0;
+        productObj.colorTwo = 0;
+        productObj.colorThree = 0;
+        productObj.posOne = 27;
+        productObj.posTwo = 27;
+        productObj.posThree = 27;
+        productObj.marginOne = -27;
+        productObj.marginTwo = -27;
+        productObj.marginThree = -27;
+
+        productOneTxt.style.height = null;
+        productOneTxt.style.color = null;
+        productOneTxt.style.marginTop = null;
+
+        productTwoTxt.style.height = null;
+        productTwoTxt.style.color = null;
+        productTwoTxt.style.marginTop = null;
+
+        productThreeTxt.style.height = null;
+        productThreeTxt.style.color = null;
+        productThreeTxt.style.marginTop = null;
+    }
 }
 //#endregion
