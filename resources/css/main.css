@@ -277,6 +277,52 @@ button {
     margin-bottom: 3rem;
 }
 
+#month-suscription {
+    margin: 3rem 0 3rem 0;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#month-suscription>article {
+    display: flex;
+    flex-direction: column;
+    flex: 33.3% 1 1;
+}
+
+#month-suscription article:nth-child(1)>div {
+    /*     background-color: #5F4BB4; */
+    display: flex;
+    flex-direction: row;
+    order: 1;
+}
+
+#month-suscription article:nth-child(1)>div>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+#month-suscription article:nth-child(1) div>div:nth-child(1).month-image {
+    background-color: #5F4BB4;
+    width: 4rem;
+    height: 4rem;
+}
+
+#month-suscription article:nth-child(1) :nth-child(2)>div:nth-child(1).month-image {
+    background: url(../img/spriteSheet.png) no-repeat 62.254% 15.808%;
+}
+
+#month-suscription article:nth-child(1) :nth-child(3)>div:nth-child(1).month-image {
+    background: url(../img/spriteSheet.png) no-repeat 62.254% 15.808%;
+}
+
+#month-suscription article:nth-child(1) :nth-child(4)>div:nth-child(1).month-image {
+    background: url(../img/spriteSheet.png) no-repeat 62.254% 15.808%;
+}
+
 /* SubClasses Style */
 
 a:hover {
@@ -509,6 +555,21 @@ p#quote-text {
         margin: 0 auto;
         width: 95%;
     }
+    #month-suscription {
+        flex-wrap: wrap;
+    }
+    #month-suscription article:nth-child(1) {
+        order: 2;
+        flex: 50% 1 1;
+    }
+    #month-suscription article:nth-child(2) {
+        order: 1;
+        flex: 100% 1 1;
+    }
+    #month-suscription article:nth-child(3) {
+        order: 3;
+        flex: 50% 1 1;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -631,6 +692,22 @@ p#quote-text {
     #service-info>button {
         margin-top: 2rem;
         margin-bottom: 2rem;
+    }
+    #month-suscription {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    #month-suscription article:nth-child(1) {
+        order: 1;
+        flex: 100% 1 1;
+    }
+    #month-suscription article:nth-child(2) {
+        order: 2;
+        flex: 100% 1 1;
+    }
+    #month-suscription article:nth-child(3) {
+        order: 3;
+        flex: 100% 1 1;
     }
 }
 
