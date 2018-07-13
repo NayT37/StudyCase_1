@@ -277,6 +277,65 @@ button {
     margin-bottom: 3rem;
 }
 
+#month-suscription {
+    margin: 3rem auto 2rem auto;
+    display: flex;
+    width: 95%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#month-suscription>article {
+    display: flex;
+    flex-direction: column;
+    flex: 33.3% 1 1;
+}
+
+#month-suscription article:nth-child(1)>div {
+    display: flex;
+    flex-direction: row;
+    order: 1;
+    margin-bottom: 1rem;
+}
+
+#month-suscription article:nth-child(1)>div>div:nth-child(2)>p {
+    font-size: 0.8rem;
+}
+
+#month-suscription article:nth-child(1)>div>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex: 65% 1 1;
+    justify-content: flex-start;
+    margin: 0 0 0.5rem 0.5rem;
+}
+
+#month-suscription article:nth-child(1) div>div:nth-child(1).month-image {
+    width: 6.5rem;
+    padding-bottom: 6.5rem;
+    /*     padding-bottom: 25%;
+    width: 8rem; */
+}
+
+#month-suscription article:nth-child(1) :nth-child(2)>div:nth-child(1).month-image {
+    background: url(../img/spriteSheet.png) no-repeat 53.634% 40.755%;
+    background-size: 115rem;
+}
+
+#month-suscription article:nth-child(1) :nth-child(3)>div:nth-child(1).month-image {
+    background: url(../img/spriteSheet.png) no-repeat 53.634% 53.777%;
+    background-size: 115rem;
+    /* background-size: 1781%; */
+}
+
+#month-suscription article:nth-child(1) :nth-child(4)>div:nth-child(1).month-image {
+    background: url(../img/spriteSheet.png) no-repeat 53.634% 67.594%;
+    background-size: 115rem;
+    /* background-size: 1781%; */
+}
+
 /* SubClasses Style */
 
 a:hover {
@@ -509,6 +568,21 @@ p#quote-text {
         margin: 0 auto;
         width: 95%;
     }
+    #month-suscription {
+        flex-wrap: wrap;
+    }
+    #month-suscription article:nth-child(1) {
+        order: 2;
+        flex: 50% 1 1;
+    }
+    #month-suscription article:nth-child(2) {
+        order: 1;
+        flex: 100% 1 1;
+    }
+    #month-suscription article:nth-child(3) {
+        order: 3;
+        flex: 50% 1 1;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -631,6 +705,22 @@ p#quote-text {
     #service-info>button {
         margin-top: 2rem;
         margin-bottom: 2rem;
+    }
+    #month-suscription {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    #month-suscription article:nth-child(1) {
+        order: 1;
+        flex: 100% 1 1;
+    }
+    #month-suscription article:nth-child(2) {
+        order: 2;
+        flex: 100% 1 1;
+    }
+    #month-suscription article:nth-child(3) {
+        order: 3;
+        flex: 100% 1 1;
     }
 }
 
@@ -772,5 +862,8 @@ p#quote-text {
     #service-info>button {
         margin-top: 0.5rem;
         margin-bottom: 1rem;
+    }
+    #month-suscription article:nth-child(1)>div {
+        flex-direction: column;
     }
 }
