@@ -385,12 +385,36 @@ button {
 
 #month-suscription article:nth-child(3)>div>input {
     display: flex;
-    width: 100%;
+    width: 20rem;
     margin: 0.5rem auto;
     border-radius: 10px;
     border: 2px solid #84A3D7;
     background-color: rgba(132, 163, 215, 0.2);
     height: 3rem;
+}
+
+#month-suscription article:nth-child(3)>div>input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #84A3D7;
+    padding-left: 0.5rem;
+}
+
+#month-suscription article:nth-child(3)>div>input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #84A3D7;
+    padding-left: 0.5rem;
+}
+
+#month-suscription article:nth-child(3)>div>input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #84A3D7;
+    padding-left: 0.5rem;
+}
+
+#month-suscription article:nth-child(3)>div>input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #84A3D7;
+    padding-left: 0.5rem;
 }
 
 #month-suscription article:nth-child(3)>div:nth-child(3)>form {
@@ -408,6 +432,70 @@ button {
     justify-content: center;
     align-items: center;
     flex: 33.3% 1 1;
+}
+
+#month-suscription article:nth-child(3)>button {
+    background-color: rgb(168, 255, 226);
+    width: 5rem;
+    height: 2rem;
+    margin: 0.5rem auto 0 auto;
+}
+
+#month-suscription article:nth-child(3)>button:hover {
+    background-color: #5F4BB4;
+}
+
+#img-bar {
+    background: url(../img/spriteSheet.png) no-repeat 51.899% 0.896%;
+    width: 100%;
+    height: 4rem;
+    /*     padding-bottom: 1%; */
+    background-size: 125%;
+    /*     padding-bottom: 56%;
+    background-size: 352%; */
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-bar>a {
+    width: 10%;
+    padding: 0;
+}
+
+#img-bar>a>div {
+    width: 100%;
+    margin: 0 auto;
+    width: 3rem;
+    height: 3rem;
+    background-size: 1483%;
+}
+
+#img-bar>a:nth-child(1)>div {
+    background: url(../img/spriteSheet.png) no-repeat 60.93% 40.666%;
+    background-size: 1483%;
+}
+
+#img-bar>a:nth-child(2)>div {
+    background: url(../img/spriteSheet.png) no-repeat 60.93% 54.087%;
+    background-size: 1483%;
+}
+
+#img-bar>a:nth-child(3)>div {
+    background: url(../img/spriteSheet.png) no-repeat 60.93% 67.508%;
+    background-size: 1483%;
+}
+
+#img-bar>a:nth-child(4)>div {
+    background: url(../img/spriteSheet.png) no-repeat 68.573% 40.666%;
+    background-size: 1483%;
+}
+
+#img-bar>a:nth-child(5)>div {
+    background: url(../img/spriteSheet.png) no-repeat 68.573% 54.087%;
+    background-size: 1483%;
 }
 
 /* SubClasses Style */
@@ -789,13 +877,20 @@ p#quote-text {
         flex-direction: column;
         flex-wrap: nowrap;
     }
+    #month-suscription>article {
+        width: 80%;
+        margin: 0 auto 1rem auto;
+        align-items: center;
+        justify-content: center;
+    }
+    #month-suscription article:nth-child(1)>div:last-child {
+        margin-bottom: 0;
+    }
     #month-suscription article:nth-child(1) {
         order: 1;
-        flex: 100% 1 1;
     }
     #month-suscription article:nth-child(2) {
         order: 2;
-        flex: 100% 1 1;
     }
     #month-suscription article:nth-child(2) div:nth-child(2) {
         width: 100%;
@@ -803,10 +898,11 @@ p#quote-text {
     }
     #month-suscription article:nth-child(3) {
         order: 3;
-        flex: 100% 1 1;
+        margin: 0 auto;
+        align-items: center;
     }
     #month-suscription article:nth-child(3)>div>input {
-        width: 60%;
+        width: 100%;
         height: 2.5rem;
     }
 }
