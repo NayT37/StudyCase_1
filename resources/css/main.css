@@ -60,6 +60,16 @@ h4 {
     text-align: center;
 }
 
+h5 {
+    color: #5F4BB4;
+    font-size: 1.618rem;
+}
+
+h6 {
+    color: #5F4BB4;
+    font-size: 1.3rem;
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -293,6 +303,10 @@ button {
     margin-bottom: 1rem;
 }
 
+#month-suscription>article>h5 {
+    margin-bottom: 1.5rem;
+}
+
 #month-suscription article:nth-child(1)>div {
     display: flex;
     flex-direction: row;
@@ -353,11 +367,47 @@ button {
     background-size: 352%;
 }
 
+#month-suscription article:nth-child(2)>div>h6 {
+    margin-top: 1.5rem;
+}
+
 #month-suscription article:nth-child(3) {
     display: flex;
     flex-direction: column;
     order: 3;
     padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+#month-suscription article:nth-child(3)>div>p {
+    display: flex;
+    text-align: justify;
+}
+
+#month-suscription article:nth-child(3)>div>input {
+    display: flex;
+    width: 100%;
+    margin: 0.5rem auto;
+    border-radius: 10px;
+    border: 2px solid #84A3D7;
+    background-color: rgba(132, 163, 215, 0.2);
+    height: 3rem;
+}
+
+#month-suscription article:nth-child(3)>div:nth-child(3)>form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#month-suscription article:nth-child(3)>div:nth-child(3)>form>div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    flex: 33.3% 1 1;
 }
 
 /* SubClasses Style */
@@ -754,6 +804,10 @@ p#quote-text {
     #month-suscription article:nth-child(3) {
         order: 3;
         flex: 100% 1 1;
+    }
+    #month-suscription article:nth-child(3)>div>input {
+        width: 60%;
+        height: 2.5rem;
     }
 }
 
