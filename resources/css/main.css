@@ -455,7 +455,6 @@ button {
     background-size: 352%; */
     display: flex;
     flex-direction: row;
-    align-content: center;
     justify-content: center;
     align-items: center;
 }
@@ -496,6 +495,16 @@ button {
 #img-bar>a:nth-child(5)>div {
     background: url(../img/spriteSheet.png) no-repeat 68.573% 54.087%;
     background-size: 1483%;
+}
+
+#map-section {
+    background-image: url(../img/map-img.png);
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /* SubClasses Style */
@@ -749,6 +758,15 @@ p#quote-text {
     #month-suscription article:nth-child(3) {
         order: 3;
         flex: 50% 1 1;
+    }
+    #img-bar {
+        height: 2.8rem;
+        background-size: 135%;
+    }
+    #img-bar>a>div {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: 1483%;
     }
 }
 
@@ -1054,5 +1072,17 @@ p#quote-text {
     }
     #month-suscription article:nth-child(1)>div>div:nth-child(2) {
         text-align: center;
+    }
+    #img-bar {
+        width: 100%;
+        /* height: 4rem; */
+        background-size: 320%;
+    }
+    #img-bar>a {
+        width: 18%;
+    }
+    #img-bar>a>div {
+        width: 2.2rem;
+        height: 2.2rem;
     }
 }
